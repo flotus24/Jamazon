@@ -6,93 +6,63 @@ const CardSimilarItems = () => {
     id: number
     src: string
     title: string
-    price: string
-    from: string
-    star: number
-    sold: number
+    quantity: string
   }
 
   const similarItems: SimilarItem[] = [
     {
       id: 1,
-      src: "/kursi.jpg",
+      src: "/Similar Product/kursi-oxihom.jpg",
       title: "Kursi Ergonomic",
-      price: "Rp1.200.000",
-      from: "Jakarta Barat",
-      star: 4.5,
-      sold: 3,
+      quantity: "100rb produk",
     },
     {
       id: 2,
-      src: "/laptop.jpg",
-      title: "Laptop ROG",
-      price: "Rp22.200.000",
-      from: "Jakarta Pusat",
-      star: 4.7,
-      sold: 4,
+      src: "/Similar Product/laptop-asus.jpg",
+      title: "Laptop ASUS",
+      quantity: "200rb produk",
     },
     {
       id: 3,
-      src: "/sepatu.jpg",
+      src: "/Similar Product/sepatu-homyped.jpg",
       title: "Sepatu Homyped",
-      price: "Rp250.000",
-      from: "Bandung",
-      star: 4.9,
-      sold: 43,
+      quantity: "50rb produk",
     },
     {
       id: 4,
-      src: "/earphone.jpg",
+      src: "/Similar Product/IEM-tangzu.jpg",
       title: "IEM Tangzu",
-      price: "Rp200.000",
-      from: "Jakarta Pusat",
-      star: 5.0,
-      sold: 10,
+      quantity: "10rb produk",
     },
     {
       id: 5,
-      src: "/gamepad.jpg",
+      src: "/Similar Product/gamepad-gamesir.jpg",
       title: "Gamepad Gamesir",
-      price: "Rp200.000",
-      from: "Tanggerang",
-      star: 4.6,
-      sold: 14,
+      quantity: "20rb produk",
     },
     {
       id: 6,
-      src: "/mouse.jpg",
+      src: "/Similar Product/rexus.jpg",
       title: "Rexus",
-      price: "Rp800.000",
-      from: "Bekasi",
-      star: 4.9,
-      sold: 15,
+      quantity: "300rb produk",
     },
     {
       id: 7,
-      src: "/pixel.jpg",
+      src: "/Similar Product/converse.jpg",
       title: "Converse",
-      price: "Rp4.200.000",
-      from: "Jakarta Pusat",
-      star: 4.7,
-      sold: 12,
+      quantity: "100rb produk",
     },
     {
       id: 8,
-      src: "/ssd.jpg",
+      src: "/Similar Product/cooler-master.jpg",
       title: "Cooler Master",
-      price: "Rp600.000",
-      from: "Jakarta Utara",
-      star: 5.0,
-      sold: 10,
+      quantity: "250rb produk",
     },
     {
       id: 9,
-      src: "/switch.jpg",
+      src: "/Similar Product/ps5.jpg",
       title: "PS 5",
-      price: "Rp2.200.000",
-      from: "Jakarta Barat",
-      star: 5.0,
-      sold: 30,
+      quantity: "70rb produk",
     },
   ]
 
@@ -111,24 +81,19 @@ const CardSimilarItems = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-y-8 gap-x-6 px-0 pb-20">
-          {similarItems.map(({ id, src, title, price, from, star, sold }) => (
+        <div className="grid grid-cols-3 gap-y-8 gap-x-6 px-0">
+          {similarItems.map(({ id, src, title, quantity }) => (
             <div
               key={id}
-              className=" xl:w-[185px] xl:h-[300px] shadow-md shadow-gray-600 rounded-lg bg-black to-gray-800 bg-gradient-to-b cursor-pointer"
+              className="lg:w-[300px] lg:h-[125px] shadow-md shadow-gray-600 rounded-lg cursor-pointer"
             >
-              <div className="xl:h-[185px] content-center bg-white rounded-md">
-                <img src={src} alt=" " className="rounded-md w-[100%]" />
+              <div className="lg:flex lg:h-[125px] content-center rounded-md">
+                <img src={src} alt=" " className="rounded-md h-[100%]" />
+                <div>
+                  <p className="pt-2 xl:pt-9 px-3 text-sm font-bold">{title}</p>
+                  <p className="py-2 px-3 text-xs interLight">{quantity}</p>
+                </div>
               </div>
-              <p className="pt-3 px-3 text-xs interLight">{title}</p>
-              <p className="pt-2 px-3 text-sm font-bold">{price}</p>
-              <p className="pt-2 px-3 text-xs interLight">{from}</p>
-              <span className="flex items-center px-3 py-2">
-                <IoStar color="yellow" size={13} />
-                <p className="ml-1 text-xs interLight">
-                  {star} | {sold} terjual
-                </p>
-              </span>
             </div>
           ))}
         </div>

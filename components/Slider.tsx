@@ -51,8 +51,8 @@ const Slider = () => {
   }
 
   return (
-    <div id="slider" className="w-full text-white">
-      <div className="max-w-screen-lg p-4 pt-20 xl:px-0 mx-auto flex flex-col justify-center w-full h-[500px] group relative cursor-pointer">
+    <div id="slider" className="w-full h-full text-white">
+      <div className="max-w-screen-lg p-4 pt-20 xl:px-0 mx-auto flex flex-col justify-center h-[250px] sm:h-[400px] lg:h-[500px] group relative cursor-pointer">
         <div
           style={{ backgroundImage: `url(${slides[currentIndex].src})` }}
           className="w-full h-full rounded-2xl bg-center bg-cover"

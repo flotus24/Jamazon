@@ -116,7 +116,7 @@ const CardItems = () => {
           {items.map(({ id, src, title, price, from, star, sold }) => (
             <div
               key={id}
-              className=" xl:w-[185px] xl:h-[300px] shadow-md shadow-gray-600 rounded-lg bg-black to-gray-800 bg-gradient-to-b cursor-pointer"
+              className=" xl:w-[185px] xl:h-[300px] shadow-md shadow-gray-600 rounded-lg bg-gray-950 cursor-pointer"
             >
               <div className="xl:h-[185px] content-center bg-white rounded-md">
                 <img src={src} alt=" " className="rounded-md w-[100%]" />
