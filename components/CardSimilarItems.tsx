@@ -1,5 +1,4 @@
 import React from "react"
-import { IoStar } from "react-icons/io5"
 
 const CardSimilarItems = () => {
   type SimilarItem = {
@@ -85,7 +84,7 @@ const CardSimilarItems = () => {
           {similarItems.map(({ id, src, title, quantity }) => (
             <div
               key={id}
-              className="lg:w-[300px] lg:h-[125px] shadow-md shadow-gray-600 rounded-lg cursor-pointer"
+              className="lg:w-[300px] lg:h-[125px] shadow-md shadow-gray-700 hover:shadow-gray-400 rounded-lg cursor-pointer"
             >
               <div className="lg:flex lg:h-[125px] content-center rounded-md">
                 <img src={src} alt=" " className="rounded-md h-[100%]" />

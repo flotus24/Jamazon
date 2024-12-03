@@ -116,7 +116,7 @@ const CardItems = () => {
           {items.map(({ id, src, title, price, from, star, sold }) => (
             <div
               key={id}
-              className=" xl:w-[185px] xl:h-[300px] shadow-md shadow-gray-600 rounded-lg bg-gray-950 cursor-pointer"
+              className=" xl:w-[185px] xl:h-[300px] shadow-md shadow-gray-700 hover:shadow-gray-400 rounded-lg bg-gray-950 cursor-pointer"
             >
               <div className="xl:h-[185px] content-center bg-white rounded-md">
                 <img src={src} alt=" " className="rounded-md w-[100%]" />
@@ -124,12 +124,12 @@ const CardItems = () => {
               <p className="pt-3 px-3 text-xs interLight">{title}</p>
               <p className="pt-2 px-3 text-sm font-bold">{price}</p>
               <p className="pt-2 px-3 text-xs interLight">{from}</p>
-              <span className="flex items-center px-3 py-2">
+              <div className="flex items-center px-3 py-2">
                 <IoStar color="yellow" size={13} />
                 <p className="ml-1 text-xs interLight">
                   {star} | {sold} terjual
                 </p>
-              </span>
+              </div>
             </div>
           ))}
         </div>
