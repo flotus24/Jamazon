@@ -1,4 +1,5 @@
 import React from "react"
+import Link from "next/link"
 import { IoStar } from "react-icons/io5"
 
 const CardItems = () => {
@@ -114,23 +115,25 @@ const CardItems = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-5 gap-y-8 gap-x-6 px-0 pb-20">
           {items.map(({ id, src, title, price, from, star, sold }) => (
-            <div
-              key={id}
-              className=" xl:w-[185px] xl:h-[300px] shadow-md shadow-gray-700 hover:shadow-gray-400 rounded-lg bg-gray-950 cursor-pointer"
-            >
-              <div className="xl:h-[185px] content-center bg-white rounded-md">
-                <img src={src} alt=" " className="rounded-md w-[100%]" />
+            <Link href="/item">
+              <div
+                key={id}
+                className=" xl:w-[185px] xl:h-[300px] shadow-md shadow-gray-700 hover:shadow-gray-400 rounded-lg bg-gray-950 cursor-pointer"
+              >
+                <div className="xl:h-[185px] content-center bg-white rounded-md">
+                  <img src={src} alt=" " className="rounded-md w-[100%]" />
+                </div>
+                <p className="pt-3 px-3 text-xs">{title}</p>
+                <p className="pt-2 px-3 text-sm font-bold">{price}</p>
+                <p className="pt-2 px-3 text-xs">{from}</p>
+                <div className="flex items-center px-3 py-2">
+                  <IoStar color="yellow" size={13} />
+                  <p className="ml-1 text-xs">
+                    {star} | {sold} terjual
+                  </p>
+                </div>
               </div>
-              <p className="pt-3 px-3 text-xs interLight">{title}</p>
-              <p className="pt-2 px-3 text-sm font-bold">{price}</p>
-              <p className="pt-2 px-3 text-xs interLight">{from}</p>
-              <div className="flex items-center px-3 py-2">
-                <IoStar color="yellow" size={13} />
-                <p className="ml-1 text-xs interLight">
-                  {star} | {sold} terjual
-                </p>
-              </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

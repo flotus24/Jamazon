@@ -90,7 +90,7 @@ const CardSimilarItems = () => {
                 <img src={src} alt=" " className="rounded-md h-[100%]" />
                 <div>
                   <p className="pt-2 xl:pt-9 px-3 text-sm font-bold">{title}</p>
-                  <p className="py-2 px-3 text-xs interLight">{quantity}</p>
+                  <p className="py-2 px-3 text-xs">{quantity}</p>
                 </div>
               </div>
             </div>

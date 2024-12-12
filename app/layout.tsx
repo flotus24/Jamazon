@@ -3,7 +3,7 @@ import Footer from "@/components/Footer"
 
 import "./globals.css"
 import type { Metadata } from "next"
-import { inter, interLight } from "@/public/Fonts/fonts"
+import { inter } from "@/public/Fonts/fonts"
 
 export const metadata: Metadata = {
   title: "Jamazon",
@@ -17,10 +17,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${interLight.variable}`}>
-        <Navbar />
-        {children}
-        <Footer />
+      <body className={`${inter.className}`}>
+        <div className="min-h-screen">
+          <Navbar />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   )

@@ -4,7 +4,7 @@ import { useState } from "react"
 import { IoStar } from "react-icons/io5"
 
 export default function Item() {
-  const [choice, setChoice] = useState("")
+  const [choice, setChoice] = useState<string>("")
 
   type Item = {
     id: number
@@ -26,15 +26,20 @@ export default function Item() {
     sold: 3,
   }
 
+  function handleChoice(choice: string) {
+    setChoice(choice)
+    console.log(choice)
+  }
+
   return (
     <div className="max-w-[1200px] mx-auto">
       <div className="flex  pt-20 xl:px-0 px-3 pb-10">
         <img className="w-[40%] h-[40%] rounded-lg" src={items.src} />
         <div className="pl-10 w-full">
-          <div className="font-bold text-xl">{items.title}</div>
-          <div className="flex text-sm interLight text-gray-300">
+          <div className="font-bold text-2xl">{items.title}</div>
+          <div className="flex interLight text-gray-300">
             {items.sold} •{" "}
-            <span className="px-1 pt-[3px]">
+            <span className="px-1 pt-[5px]">
               {" "}
               <IoStar color="yellow" size={13} />{" "}
             </span>{" "}
@@ -42,32 +47,71 @@ export default function Item() {
           </div>
 
           <div className="flex items-center justify-between">
-            <div className="font-bold  text-2xl pt-2">{items.price}</div>
+            <div className="font-bold  text-3xl pt-2">{items.price}</div>
             <button>Add To Cart</button>
           </div>
 
           <div className="border-b py-1" />
 
-          <div className="flex pt-3 pb-2font-bold items-center">
-            Pick Color: <span className="ml-2 font-normal"></span>
+          <div className="flex pt-3 pb-2 font-bold text-lg items-center">
+            Pick Color: <span className="ml-2 font-normal">{choice}</span>
           </div>
-          <div className="flex mt-2">
-            <button className="bg-transparent text-blue-800 border-blue-800 hover:border-blue-500 focus:bg-blue-500 font-semibold hover:text-white focus:text-white py-1 px-3 mr-1 border hover:border-transparent rounded">
-              White
-            </button>
-            <button className="bg-transparent text-blue-800 border-blue-800 hover:border-blue-500 focus:bg-blue-500 font-semibold hover:text-white focus:text-white py-1 px-3 mr-1 border hover:border-transparent rounded">
-              Silver
-            </button>
-            <button className="bg-transparent text-blue-800 border-blue-800 hover:border-blue-500 focus:bg-blue-500 font-semibold hover:text-white focus:text-white py-1 px-3 mr-1 border hover:border-transparent rounded">
-              Black
-            </button>
+          <div className="flex text-lg">
+            <div>
+              <input
+                type="radio"
+                className="hidden peer"
+                name="choice"
+                id="choice-1"
+                value="White"
+                onChange={(e) => handleChoice(e.target.value)}
+              />
+              <label
+                className="relative text-blue-800 border-blue-800 hover:border-blue-500 hover:text-white peer-checked:bg-blue-500 peer-checked:text-white font-semibold py-1 px-3 mr-1 border rounded cursor-pointer"
+                htmlFor="choice-1"
+              >
+                White
+              </label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                className="hidden peer"
+                name="choice"
+                id="choice-2"
+                value="Silver"
+                onChange={(e) => handleChoice(e.target.value)}
+              />
+              <label
+                className="relative text-blue-800 border-blue-800 hover:border-blue-500 hover:text-white peer-checked:bg-blue-500 peer-checked:text-white font-semibold py-1 px-3 mr-1 border rounded cursor-pointer"
+                htmlFor="choice-2"
+              >
+                Silver
+              </label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                className="hidden peer"
+                name="choice"
+                id="choice-3"
+                value="Black"
+                onChange={(e) => handleChoice(e.target.value)}
+              />
+              <label
+                className="relative text-blue-800 border-blue-800 hover:border-blue-500 hover:text-white peer-checked:bg-blue-500 peer-checked:text-white font-semibold py-1 px-3 mr-1 border rounded cursor-pointer"
+                htmlFor="choice-3"
+              >
+                Black
+              </label>
+            </div>
           </div>
           {/* <div className="flex items-center">
               Condition: <span className="font-bold text-[17px] ml-2">New</span>
             </div> */}
 
           <div className="font-semibold pt-3 pb-1">Description:</div>
-          <div className="text-sm">
+          <div className="interLight">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
             ultrices urna vitae rhoncus viverra. Ut ornare rutrum ullamcorper.
             Cras accumsan convallis dui, ut eleifend mauris iaculis vitae. Proin
